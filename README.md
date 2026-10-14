@@ -1,0 +1,1 @@
+# smarter-gtm-template
