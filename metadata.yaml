@@ -1,0 +1,8 @@
+# The Community Template Gallery's metadata: https://developers.google.com/tag-platform/tag-manager/templates/gallery
+#
+# Each version is the sha of a commit on main that changed template.tpl, newest first, with its change notes. Add a
+# version after a release is merged, with the release commit's sha (doc/adr/008-gallery.md). Until then, the Gallery
+# has nothing to import: the first version is added after the first release.
+homepage: "https://docs.smarter.sh/en/latest/smarter-framework/smarter-gtm.html"
+documentation: "https://github.com/smarter-sh/smarter-gtm-template#readme"
+versions: []
