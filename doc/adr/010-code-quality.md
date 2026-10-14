@@ -12,7 +12,7 @@ The template's code is sandboxed JavaScript inside a text file that no linter un
 
 - The sandbox lint (ADR-007) is the template's linter. The harness, tests and scripts are linted with ESLint, and formatted with Prettier.
 - codespell, the generic pre-commit hooks and commitlint, as in every Smarter repository.
-- GitHub Actions run the lint and the tests for every push and pull request (`test.yml`), and semantic-release on `main`, `beta` and `alpha` (`pushMain.yml`).
+- GitHub Actions run the lint and the tests, with coverage to Codecov, for every push and pull request (`test.yml`); check the Gallery's files and keep them as an artifact (`build.yml`); and run semantic-release on `main`, `beta` and `alpha` (`pushMain.yml`).
 
 ## Consequences
 

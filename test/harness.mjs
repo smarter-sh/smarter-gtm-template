@@ -9,6 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { isDeepStrictEqual } from "node:util";
+import vm from "node:vm";
 import YAML from "yaml";
 
 export const TEMPLATE = path.resolve(import.meta.dirname, "../template.tpl");
@@ -75,6 +76,34 @@ function getType(value) {
   if (value === null) return "null";
   if (Array.isArray(value)) return "array";
   return typeof value;
+}
+
+// The template's code, as a file that Node runs and V8 measures the coverage of: generated, and gitignored.
+const COMPILED = path.resolve(import.meta.dirname, ".compiled/template.js");
+const compiled = new Map();
+
+/**
+ * The template's code as a function of data and require. It runs from COMPILED, padded so that its lines are
+ * template.tpl's: the coverage report's lines are the template's (codecov.yml maps the file to template.tpl).
+ */
+function compile(code) {
+  if (!compiled.has(code)) {
+    const text = fs.readFileSync(TEMPLATE, "utf-8");
+    const offset = text.indexOf(code);
+    let filename = "template.js";
+    let padding = "\n";
+    if (offset >= 0) {
+      filename = COMPILED;
+      padding = "\n".repeat(text.slice(0, offset).split("\n").length - 1);
+    }
+    const source = `(function (data, require) {${padding}${code}\n})\n`;
+    if (filename === COMPILED) {
+      fs.mkdirSync(path.dirname(COMPILED), { recursive: true });
+      fs.writeFileSync(COMPILED, source);
+    }
+    compiled.set(code, vm.runInThisContext(source, { filename }));
+  }
+  return compiled.get(code);
 }
 
 /** The permission that each api needs, or null for the apis that need none. */
@@ -174,7 +203,7 @@ export class Run {
       gtmOnSuccess: () => this.record("gtmOnSuccess", []),
       gtmOnFailure: () => this.record("gtmOnFailure", []),
     };
-    new Function("data", "require", this.code)(fullData, (name) => this.require(name));
+    compile(this.code)(fullData, (name) => this.require(name));
   }
 
   /** The apis of a scenario's code. */

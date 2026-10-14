@@ -5,7 +5,11 @@ description: Use when writing or running smarter-gtm-template's tests - GTM ___T
 
 # Smarter Chat for Google Tag Manager: Testing
 
-`make test` runs Vitest on `test/*.test.mjs`.
+`make test` runs Vitest on `test/*.test.mjs`. `make coverage` runs them with
+a coverage report of the template's code: the harness runs it from
+`test/.compiled/template.js` (generated, gitignored), padded so that its line
+numbers are `template.tpl`'s, and `codecov.yml` reports it as `template.tpl`.
+CI uploads the report to Codecov; keep the code's branches covered.
 
 ## Scenarios (`___TESTS___`)
 

@@ -1,6 +1,8 @@
 # The lint standard of the repository: see skills/smarter-code-quality.
 # Install the commit-msg hook too, so that commitlint checks each commit message.
 default_install_hook_types: [pre-commit, commit-msg]
+# Hooks run at the pre-commit stage only, unless they say otherwise: commitlint runs at commit-msg.
+default_stages: [pre-commit]
 repos:
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.3

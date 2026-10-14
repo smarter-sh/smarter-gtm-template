@@ -1,0 +1,35 @@
+#------------------------------------------------------------------------------
+# Codecov configuration
+#
+# .github/workflows/test.yml uploads coverage/lcov.info, written by
+# `make coverage` (see vitest.coverage.config.mjs). The harness runs
+# template.tpl's code from test/.compiled/template.js, a generated file whose
+# lines are template.tpl's, so the fix below reports it as template.tpl.
+#
+# - project: a commit fails if it lowers the coverage by more than 1% from
+#   its base.
+# - patch: the lines a pull request adds or changes need 90% coverage.
+#------------------------------------------------------------------------------
+codecov:
+  require_ci_to_pass: true
+
+fixes:
+  - "^test/.compiled/template.js::template.tpl"
+
+coverage:
+  precision: 2
+  round: down
+  range: "80...100"
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 1%
+    patch:
+      default:
+        target: 90%
+
+comment:
+  layout: "condensed_header, diff, files"
+  behavior: default
+  require_changes: true

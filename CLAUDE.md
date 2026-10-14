@@ -51,6 +51,7 @@ User documentation lives in the platform's repository:
 ```bash
 make init                    # npm dev dependencies, pre-commit hooks
 make test                    # Vitest: scenarios, sandbox lint, sections, metadata
+make coverage                # the same, with coverage of template.tpl's code
 make lint                    # ESLint and Prettier
 make embed-version V=0.9.1   # the default embed script version
 ```

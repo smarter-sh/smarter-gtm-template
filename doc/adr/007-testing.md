@@ -13,7 +13,7 @@ GTM runs a template's tests (its `___TESTS___` section) in the template editor, 
 ## Decision
 
 - **The tests are GTM's own**, in `template.tpl`'s `___TESTS___` section, so that they run in the template editor as well.
-- **`npm test`** runs the same scenarios in Node: `test/harness.mjs` reads `template.tpl`, and runs its sandboxed code and each scenario with fakes of GTM's apis (`require`, `mock`, `assertApi`, `assertThat`, `runCode`, `fail`), so the tests run in CI.
+- **`npm test`** runs the same scenarios in Node: `test/harness.mjs` reads `template.tpl`, and runs its sandboxed code and each scenario with fakes of GTM's apis (`require`, `mock`, `assertApi`, `assertThat`, `runCode`, `fail`), so the tests run in CI. The harness runs the code from a generated file whose lines are `template.tpl`'s, so that V8 measures its coverage, which CI uploads to Codecov (`codecov.yml`).
 - **A sandbox lint** (`test/sandbox.test.mjs`) parses the sandboxed code and rejects what GTM's sandbox doesn't accept: arrow functions, classes, template literals, regular expression literals, spread, `typeof`, `new`, `this`, and globals other than `data` and `require`. It also checks that every `require`d api has its permission, and that the template's sections are valid JSON and YAML.
 - Before a release to the Gallery, import `template.tpl` into a test container, and run its tests and a Preview there, by hand.
 

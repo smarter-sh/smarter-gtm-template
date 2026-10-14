@@ -1,6 +1,6 @@
 {
   "name": "smarter-gtm-template",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "private": true,
   "description": "Smarter Chat for Google Tag Manager: a custom tag template that adds a Smarter chatbot to any site with GTM.",
   "license": "Apache-2.0",
@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "vitest run",
+    "coverage": "vitest run --config vitest.coverage.config.mjs --coverage",
     "embed-version": "node scripts/embed-version.mjs",
     "lint": "eslint --max-warnings=0 . && prettier --check .",
     "format": "prettier --write ."
@@ -29,6 +30,7 @@
     "@semantic-release/git": "11.0.1",
     "@semantic-release/github": "12.0.10",
     "@semantic-release/release-notes-generator": "14.1.1",
+    "@vitest/coverage-v8": "5.0.4",
     "conventional-changelog-conventionalcommits": "9.3.1",
     "eslint": "10.12.0",
     "globals": "^17.13.0",

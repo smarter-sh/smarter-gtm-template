@@ -1,7 +1,10 @@
 ---
 #------------------------------------------------------------------------------
-# Lint, and run template.tpl's scenarios and the sandbox lint, in Node.
+# Lint, and run template.tpl's scenarios and the sandbox lint, in Node, with
+# coverage of the template's code, which goes to Codecov.
 # GTM itself is not in CI: see doc/adr/007-testing.md.
+#
+# Requires a CODECOV_TOKEN secret.
 #------------------------------------------------------------------------------
 name: Test
 
@@ -32,5 +35,12 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Tests
-        run: npm test
+      - name: Tests, with coverage
+        run: npm run coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v7
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
