@@ -1,5 +1,7 @@
 node_modules/
 coverage/
+venv/
+test/.compiled/
 package-lock.json
 CHANGELOG.md
 # GTM's export format, which Prettier would break.

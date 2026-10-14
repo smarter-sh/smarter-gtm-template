@@ -8,3 +8,4 @@ coverage/
 .env.*
 .npmrc
 test/.compiled/
+venv/
