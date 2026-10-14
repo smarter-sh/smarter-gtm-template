@@ -1,6 +1,6 @@
 {
   "name": "smarter-gtm-template",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "private": true,
   "description": "Smarter Chat for Google Tag Manager: a custom tag template that adds a Smarter chatbot to any site with GTM.",
   "license": "Apache-2.0",
