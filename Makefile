@@ -5,7 +5,7 @@ SHELL := /bin/bash
 # The developer's shell may export NODE_ENV=production, which makes npm skip devDependencies.
 NPM_INSTALL := npm install --include=dev
 
-.PHONY: all init test lint format embed-version clean pre-commit-run help
+.PHONY: all init test coverage lint format embed-version clean pre-commit-run help
 
 all: help
 
@@ -15,6 +15,9 @@ init:
 
 test:
 	npm test
+
+coverage:
+	npm run coverage
 
 lint:
 	npm run lint
@@ -38,6 +41,7 @@ help:
 	@echo '===================================================================='
 	@echo 'init            - npm dev dependencies, pre-commit hooks'
 	@echo 'test            - Vitest: the scenarios, the sandbox lint, the sections'
+	@echo 'coverage        - the tests, with a coverage report of the template code'
 	@echo 'lint            - ESLint and Prettier'
 	@echo 'embed-version   - the default embed script: make embed-version V=0.9.1'
 	@echo 'clean           - remove dependencies and build output'

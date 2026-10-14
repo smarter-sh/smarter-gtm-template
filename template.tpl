@@ -450,6 +450,18 @@ scenarios:
     });
     runCode(mockData);
     assertThat(loaded).isEqualTo('https://cdn.jsdelivr.net/npm/@smarter.sh/ui-chat@0.9/dist/embed.js');
+- name: Loads the default version of the embed script when the field is empty
+  code: |-
+    // the setup's version is the field's default, which make embed-version keeps the same as the code's.
+    const defaultVersion = mockData.version;
+    mockData.version = '';
+    let loaded;
+    mock('injectScript', function (url, onSuccess) {
+      loaded = url;
+      onSuccess();
+    });
+    runCode(mockData);
+    assertThat(loaded).isEqualTo('https://cdn.jsdelivr.net/npm/@smarter.sh/ui-chat@' + defaultVersion + '/dist/embed.js');
 - name: Adds every optional field that is set, and leaves out the empty ones
   code: |-
     mockData.apiKey = 'key-1';

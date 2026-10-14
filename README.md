@@ -3,7 +3,9 @@
 > A Google Tag Manager tag template that adds a [Smarter](https://smarter.sh) chatbot to any site with a GTM web
 > container: a chat launcher in a corner of the page, or a chat in an element of the page.
 
+[![Build](https://github.com/smarter-sh/smarter-gtm-template/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/smarter-sh/smarter-gtm-template/actions/workflows/build.yml)
 [![Test](https://github.com/smarter-sh/smarter-gtm-template/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/smarter-sh/smarter-gtm-template/actions/workflows/test.yml)
+[![Coverage](https://img.shields.io/codecov/c/github/smarter-sh/smarter-gtm-template/main?label=coverage&logo=codecov)](https://app.codecov.io/gh/smarter-sh/smarter-gtm-template)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 The template loads the embed script of [`@smarter.sh/ui-chat`](https://github.com/smarter-sh/smarter-chat) from
@@ -52,6 +54,7 @@ The template's permissions: inject scripts from `https://cdn.jsdelivr.net/npm/@s
 ```console
 make init      # npm dev dependencies, pre-commit hooks
 make test      # template.tpl's ___TESTS___ scenarios in Node, the sandbox lint, the sections and metadata.yaml
+make coverage  # the same, with a coverage report of template.tpl's code
 make lint
 ```
 
