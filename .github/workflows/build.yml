@@ -42,7 +42,7 @@ jobs:
         run: npx vitest run test/template.test.mjs
 
       - name: Upload the Gallery's files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: smarter-gtm-template-${{ github.sha }}
           path: |
