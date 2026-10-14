@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+.DS_Store
+.idea/
+*.swp
+*.log
+.env
+.env.*
+.npmrc

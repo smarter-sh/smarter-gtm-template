@@ -1,0 +1,36 @@
+---
+#------------------------------------------------------------------------------
+# Lint, and run template.tpl's scenarios and the sandbox lint, in Node.
+# GTM itself is not in CI: see doc/adr/007-testing.md.
+#------------------------------------------------------------------------------
+name: Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, alpha, beta]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --include=dev
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests
+        run: npm test
