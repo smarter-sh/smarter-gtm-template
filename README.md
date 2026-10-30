@@ -7,6 +7,7 @@
 [![Test](https://github.com/smarter-sh/smarter-gtm-template/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/smarter-sh/smarter-gtm-template/actions/workflows/test.yml)
 [![Coverage](https://img.shields.io/codecov/c/github/smarter-sh/smarter-gtm-template/main?label=coverage&logo=codecov)](https://app.codecov.io/gh/smarter-sh/smarter-gtm-template)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![Slack](https://img.shields.io/badge/Slack-The%20Smarter%20Project-4A154B?logo=slack&logoColor=white)](https://join.slack.com/t/thesmarterproject/shared_invite/zt-4f0t6v46q-e2c5Of4hS4fBr_XwfQARCw)
 
 The template loads the embed script of [`@smarter.sh/ui-chat`](https://github.com/smarter-sh/smarter-chat) from
 jsDelivr, which renders the chat in a Shadow DOM, so the site's css can't break it. The chatbot is an LLMClient that you
