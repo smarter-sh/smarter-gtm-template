@@ -9,10 +9,6 @@ updates:
     schedule:
       interval: "monthly"
     target-branch: "alpha"
-    assignees:
-      - "lpm0073"
-    reviewers:
-      - "lpm0073"
   - package-ecosystem: "github-actions"
     directory: "/"
     labels:
@@ -21,7 +17,3 @@ updates:
     schedule:
       interval: "monthly"
     target-branch: "alpha"
-    assignees:
-      - "lpm0073"
-    reviewers:
-      - "lpm0073"
