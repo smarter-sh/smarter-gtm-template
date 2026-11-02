@@ -9,16 +9,6 @@ updates:
     schedule:
       interval: "monthly"
     target-branch: "alpha"
-    assignees:
-      - "lpm0073"
-    reviewers:
-      - "lpm0073"
-    ignore:
-      # 10.x needs conventional-changelog-writer 9, but
-      # @semantic-release/release-notes-generator 14 still loads writer 8,
-      # so a release fails at generateNotes. Remove once it supports writer 9.
-      - dependency-name: "conventional-changelog-conventionalcommits"
-        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     labels:
@@ -27,7 +17,3 @@ updates:
     schedule:
       interval: "monthly"
     target-branch: "alpha"
-    assignees:
-      - "lpm0073"
-    reviewers:
-      - "lpm0073"

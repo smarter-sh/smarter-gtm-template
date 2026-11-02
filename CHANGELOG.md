@@ -6,14 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 
 
-## [0.1.0-alpha.2](https://github.com/smarter-sh/smarter-gtm-template/compare/v0.1.0-alpha.1...v0.1.0-alpha.2) (2026-11-02)
-
-### Bug Fixes
-
-* **deps:** pin the conventionalcommits preset to 9.3.1 again ([9c3d275](https://github.com/smarter-sh/smarter-gtm-template/commit/9c3d2752a4da5998b05d24905dbdce0cd5ebf4fe))
-* **embed:** load [@smarter](https://github.com/smarter).sh/ui-chat 0.39.0 ([227636f](https://github.com/smarter-sh/smarter-gtm-template/commit/227636fbba1f6b69ee5fe1ca987adf8f0a037804))
-
-## [0.1.0-alpha.1](https://github.com/smarter-sh/smarter-gtm-template/compare/v0.0.0...v0.1.0-alpha.1) (2026-10-14)
+## [0.1.0](https://github.com/smarter-sh/smarter-gtm-template/compare/v0.0.0...v0.1.0) (2026-10-14)
 
 ### Features
 
