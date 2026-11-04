@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 
 
-## [0.1.1-alpha.1](https://github.com/smarter-sh/smarter-gtm-template/compare/v0.1.0...v0.1.1-alpha.1) (2026-11-02)
+## [0.1.1](https://github.com/smarter-sh/smarter-gtm-template/compare/v0.1.0...v0.1.1) (2026-11-02)
 
 ### Bug Fixes
 
