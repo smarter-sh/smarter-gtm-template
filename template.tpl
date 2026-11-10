@@ -153,7 +153,7 @@ ___TEMPLATE_PARAMETERS___
         "name": "version",
         "displayName": "Embed script version",
         "simpleValueType": true,
-        "defaultValue": "0.39.0",
+        "defaultValue": "1.1.7",
         "help": "The version of @smarter.sh/ui-chat to load from jsDelivr. The default is the version that this template is tested with. A range, e.g. 0.9, follows its patch releases.",
         "valueValidators": [
           {
@@ -202,7 +202,7 @@ if (data.open) {
   options.open = true;
 }
 
-const url = 'https://cdn.jsdelivr.net/npm/@smarter.sh/ui-chat@' + encodeUriComponent(data.version || '0.39.0') + '/dist/embed.js';
+const url = 'https://cdn.jsdelivr.net/npm/@smarter.sh/ui-chat@' + encodeUriComponent(data.version || '1.1.7') + '/dist/embed.js';
 
 if (copyFromWindow('SmarterChat.version')) {
   // the embed script has run, e.g. another Smarter Chat tag loaded it, or this is a single-page app's history change.
@@ -536,7 +536,7 @@ setup: |-
     open: false,
     target: '',
     height: '',
-    version: '0.39.0'
+    version: '1.1.7'
   };
 
 
