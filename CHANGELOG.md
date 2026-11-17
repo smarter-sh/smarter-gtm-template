@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 
 
+## [0.1.2-alpha.2](https://github.com/smarter-sh/smarter-gtm-template/compare/v0.1.2-alpha.1...v0.1.2-alpha.2) (2026-11-17)
+
+### Bug Fixes
+
+* **embed:** load [@smarter](https://github.com/smarter).sh/ui-chat 1.1.10 ([461f2a9](https://github.com/smarter-sh/smarter-gtm-template/commit/461f2a9ad858af909453ffd59458d7fe96764351))
+
 ## [0.1.2-alpha.1](https://github.com/smarter-sh/smarter-gtm-template/compare/v0.1.1...v0.1.2-alpha.1) (2026-11-10)
 
 ### Bug Fixes
